@@ -24,13 +24,14 @@ const UserContainer = styled.div`
     margin: 1%;
     width: 80%;
     align-items: center;
-    height: 100vh;
+    height: fit-content;
+    background-color: #E0E0E0;
   }
 
   h1{
     font-size: 3rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: darkslategray;
+    color: #404040;
     
   }
 `
