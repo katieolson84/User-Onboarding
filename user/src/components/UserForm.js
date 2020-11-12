@@ -1,4 +1,43 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const UserInfo = styled.div`
+        display: flex;
+        flex-direction: column;
+        border: 1px black solid;
+        border-radius: 5px;
+        box-shadow: 2px 3px 3px gray;
+        width: 80%;
+        align-items: center;
+    
+    .formContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label{
+        line-height: 26px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    input{
+        height: 20px;
+        width: 23rem;
+        margin: 1%;
+    }
+    select{
+        height: 30px;
+        width: 23.5rem;
+    }
+    h4{
+        text-align: left;
+    }
+    .radioBtns{
+        justify-self: left;
+    }
+`
 
 const UserForm = (props) => {
     const {values, change, submit, disabled, errors } = props;
@@ -17,7 +56,7 @@ const UserForm = (props) => {
     
 
     return (
-        <div>
+        <UserInfo>
             <form className="formContainer" onSubmit={onSubmit}>
                 <div className="formTitle">
                     <h2>Add A User</h2>
@@ -140,7 +179,7 @@ const UserForm = (props) => {
                 </div>
                 <button disabled={disabled}>submit</button>
             </form>
-        </div>
+        </UserInfo>
     )
 }
 

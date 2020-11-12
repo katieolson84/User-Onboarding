@@ -5,8 +5,34 @@ import UserForm from './UserForm';
 import axios from 'axios';
 import schema from '../validation/formSchema';
 import * as yup from 'yup';
+import styled from 'styled-components'
 
+const UserContainer = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 100%;
 
+  .container{
+    display:flex;
+    flex-direction: column;
+    border: 2px gray solid;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+    margin: 1%;
+    width: 80%;
+    align-items: center;
+  }
+
+  h1{
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+    
+  }
+`
 const initialFormValues = { 
   name: '', 
   email: '', 
@@ -105,7 +131,7 @@ const App = () => {
   }, [formValues])
 
   return (
-    <div>
+    <UserContainer>
       <div className="container">
         <h1>User Onboarding</h1>
         <UserForm
@@ -119,9 +145,11 @@ const App = () => {
           return <User key={user.id} details={user}/>
         })}
       </div>
-    </div>
+    </UserContainer>
   )
 }
+
+
 
 export default App
 
