@@ -9,13 +9,31 @@ const UserInfo = styled.div`
         box-shadow: 2px 3px 3px gray;
         width: 80%;
         align-items: center;
+        height: fit-content;
     
     .formContainer{
+        /* display: flex;
+        flex-direction: column; */
+        /* align-items: flex-start; */
+        border: 1px green solid;
+        width: 100%;
+    }
+    .formInputs{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        border: 1px blue solid;
+        padding: 2%;
     }
-
+    .btns{
+        border: 1px red solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        
+    }
+    
     label{
         line-height: 26px;
         display: flex;
@@ -34,9 +52,12 @@ const UserInfo = styled.div`
     h4{
         text-align: left;
     }
-    .radioBtns{
-        justify-self: left;
+    button{
+        padding: 1%;
+        margin: 3%;
+        font-size: 1.5rem;
     }
+    
 `
 
 const UserForm = (props) => {
@@ -58,10 +79,12 @@ const UserForm = (props) => {
     return (
         <UserInfo>
             <form className="formContainer" onSubmit={onSubmit}>
+                
                 <div className="formTitle">
                     <h2>Add A User</h2>
 
                 </div>
+
                 <div className="formInputs">
                     <label>
                         Name:
@@ -120,13 +143,14 @@ const UserForm = (props) => {
                         </select>
                         {errors.role.length > 0 ? ( <p className='error' > {errors.role} </p> ) : null }
                     </label>
-
-                        {/* radio button */}
+                </div>
+                <div className="btns">
+                    {/* radio button */}
                     <div className="radioBtns">
                         <h4>Status:</h4>
 
                         <label>
-                            Full-time
+                            
                             <input
                                 type="radio"
                                 name="status"
@@ -135,10 +159,13 @@ const UserForm = (props) => {
                                 onChange={onChange}
                             />
                             {errors.status.length > 0 ? ( <p className='error' > {errors.status} </p> ) : null }
+                            Full-time
                         </label>
+                    </div>
 
+                    <div className="radioBtns">
                         <label>
-                            Part-time
+                            
                             <input
                                 type="radio"
                                 name="status"
@@ -147,10 +174,13 @@ const UserForm = (props) => {
                                 onChange={onChange}
                             />
                             {errors.status.length > 0 ? ( <p className='error' > {errors.status} </p> ) : null }
+                            Part-time
                         </label>
-                        
+                    </div>
+
+                    <div className="radioBtns">
                         <label>
-                            Contractor
+                            
                             <input
                                 type="radio"
                                 name="status"
@@ -159,12 +189,14 @@ const UserForm = (props) => {
                                 onChange={onChange}
                             />
                             {errors.status.length > 0 ? ( <p className='error' > {errors.status} </p> ) : null }
+                            Contractor
                         </label>
                     </div>
 
-                        {/* checkbox */}
+                    {/* checkbox */}
                     <div className="termsCheckbox">
                         <h4>Do you accept the Terms of Service?</h4>
+                    
                         <label>
                             Accept
                             <input 
@@ -172,11 +204,12 @@ const UserForm = (props) => {
                                 name="terms"
                                 checked={values.terms}
                                 onChange={onChange}
-                            />
-                            {errors.terms.length > 0 ? ( <p className='error' > {errors.terms} </p> ) : null }
+                                />
+                                {errors.terms.length > 0 ? ( <p className='error' > {errors.terms} </p> ) : null }
                         </label>
                     </div>
                 </div>
+                
                 <button disabled={disabled}>submit</button>
             </form>
         </UserInfo>

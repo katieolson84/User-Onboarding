@@ -24,6 +24,7 @@ const UserContainer = styled.div`
     margin: 1%;
     width: 80%;
     align-items: center;
+    height: 100vh;
   }
 
   h1{
