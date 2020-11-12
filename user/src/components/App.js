@@ -36,17 +36,17 @@ const App = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(initialDisabled); //boolean
 
-  const getUsers = () => {
-    axios
-      .get('https://reqres.in/api/users')
-      .then(res => {
-        setUser(res.data.data);
-      })
-      .catch((err) => {
-        debugger;
-        console.log(err);
-      })
-  }
+  // const getUsers = () => {
+  //   axios
+  //     .get('https://reqres.in/api/users')
+  //     .then(res => {
+  //       setUser(res.data.data);
+  //     })
+  //     .catch((err) => {
+  //       debugger;
+  //       console.log(err);
+  //     })
+  // }
 
   const postNewUser = (newUser) => {
     axios
@@ -80,6 +80,7 @@ const App = () => {
       });
   };
 
+
   const formSubmit = () => {
     const newUser= {
       name: formValues.name.trim(),
@@ -92,9 +93,9 @@ const App = () => {
    postNewUser(newUser)
   };
 
-  useEffect(()=> {
-    getUsers();
-  }, []);
+  // useEffect(()=> {
+  //   getUsers();
+  // }, []);
 
   useEffect(() => {
     schema.isValid(formValues)
