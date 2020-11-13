@@ -10,7 +10,7 @@ const UserCard = styled.div`
     background-color: #404040;
     color: white;
     width: 40%;
-
+    height: fit-content;
 `
 
 const User = ({details}) => {

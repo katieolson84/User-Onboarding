@@ -11,6 +11,7 @@ const UserInfo = styled.div`
         align-items: center;
         height: fit-content;
         background-color: white;
+        margin-bottom: 4%;
     
     .formContainer{
         border: 1px green solid;
@@ -225,7 +226,7 @@ const UserForm = (props) => {
                     </div>
                 </div>
                 
-                <button disabled={disabled}>Submit</button>
+                <button className="submitBtn" disabled={disabled}>Submit</button>
             </form>
         </UserInfo>
     )
